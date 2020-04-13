@@ -81,3 +81,46 @@ let myStr: string = myArray[0];
 
 console.log(myStr);
 
+
+
+
+interface Animal {
+    name : string;
+}
+interface Dog  extends Animal{
+    breed: string;
+}
+
+interface NotOkey{
+ //   [x: number]: Animal;
+    [x: string]: Dog;
+}
+
+interface NumberDictionary {
+    [index: string]: number | string;
+    length: number;
+    name: string;
+}
+
+
+
+interface ReadOnlyStringArray{
+    readonly [index: number]: string;
+}
+
+let myArray2: ReadOnlyStringArray = ["ALICE","BOB"];
+let myStig: string = myArray2[1]  //= "Mallory";
+
+
+
+
+// class type 
+interface ClockInterface{
+    currentTime: Date;
+}
+
+class Clock implements ClockInterface{
+    currenTime : Date = new Date();
+    constructor(h: number, m:number){}
+
+}
