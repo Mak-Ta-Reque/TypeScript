@@ -115,12 +115,24 @@ let myStig: string = myArray2[1]  //= "Mallory";
 
 
 // class type 
-interface ClockInterface{
+interface ClockInterfacei{
     currentTime: Date;
 }
 
-class Clock implements ClockInterface{
-    currenTime : Date = new Date();
+class Clock implements ClockInterfacei{
+    currentTime : Date = new Date();
     constructor(h: number, m:number){}
+}
+
+// diffrent between the static and  instance sides of classes
+
+
+interface ClockConstructor {
+    new (hour: number, minutes: number);
+}
+class Clocky implements ClockConstructor {
+    curentTime: Date;
+    constructor(h: number, m: number){}
 
 }
+
